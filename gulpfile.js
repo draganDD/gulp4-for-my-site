@@ -42,6 +42,7 @@ gulp.task('javascript',function() {
     .pipe(gulp.dest('dist/js'))
 })
 
+//translation: slike (ser) -> pictures (eng)
 gulp.task('imgmin',function() {
     return gulp.src('app/slike/**/*')
     .pipe(changed('dist/slike/'))
@@ -64,6 +65,7 @@ gulp.task('watch',function() {
    
     gulp.watch('./**/*.less',gulp.parallel('lesscss','concatCSS'));
     gulp.watch('app/js/*.js',gulp.series('javascript'));
+    //translation: slike (ser) -> pictures (eng)
     gulp.watch('app/slike',gulp.series('imgmin'));
 
     gulp.watch('*.html').on('change', browserSync.reload);
